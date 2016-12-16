@@ -26,6 +26,7 @@ int main() {
 		if ((sum + (int)(m + i)) % 3 == 0) {
 			printf("%02d\n ", *(m + i));
 		}
+i++;
 	}	
 
 	getchar();
