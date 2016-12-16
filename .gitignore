@@ -1,0 +1,35 @@
+int getSum(int num) {
+	static int sum = 0, r;
+
+	if (num != 0) {
+		r = num % 10;
+		sum = sum + r;
+		getSum(num / 10);
+
+	}
+	return sum;
+}
+
+
+
+
+int getSum(int);
+int main() {
+	int *m = (int*)malloc(1000 * sizeof(int));
+	int i = 0;
+	int sum = 0;
+	while (i < 10000) {
+		int *r = 10000 + rand() % 90000;
+		sum = getSum(r);
+		*(m + i) = r;
+		
+		if ((sum + (int)(m + i)) % 3 == 0) {
+			printf("%02d\n ", *(m + i));
+		}
+	}	
+
+	getchar();
+	return 0;
+}
+
+gamoitanet ekranze iseti elementebi romelta cifrta jami da misamartis jami aris 3 is jeradi!
